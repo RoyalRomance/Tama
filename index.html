@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TAMAQMAN PTY LTD - Professional steel fabrication and custom metalwork solutions in South Africa.">
+  <title>TAMAQMAN PTY LTD | Steel Fabrication</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid #c40000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #e00000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #e00000;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #e00000;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d00000;
+      color: white;
+      padding: 14px 28px;
+      margin: 6px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #a00000;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #111;
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      color: #d00000;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .about-text h3 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .services {
+      background: #eeeeee;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px 24px;
+      border-radius: 8px;
+      border-top: 4px solid #d00000;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .service-card p {
+      color: #666;
+    }
+
+    .why-us {
+      background: #111;
+      color: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .why-card {
+      padding: 25px;
+      border: 1px solid #444;
+      border-radius: 8px;
+    }
+
+    .why-card h3 {
+      color: #e00000;
+      margin-bottom: 10px;
+    }
+
+    .projects {
+      background: white;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      border-radius: 8px;
+      background: #111;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-card h3 {
+      color: white;
+      padding: 18px;
+    }
+
+    .quote {
+      background: #eeeeee;
+    }
+
+    form {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.08);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .contact {
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 35px;
+      margin-top: 30px;
+    }
+
+    .contact-box {
+      padding: 20px;
+    }
+
+    .contact-box h3 {
+      color: #e00000;
+      margin-bottom: 7px;
+    }
+
+    footer {
+      background: #080808;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .about-grid,
+      .service-grid,
+      .why-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">TAMAQMAN <span>PTY LTD</span></div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#quote">Get a Quote</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Quality Steel <span>Fabrication</span> Built to Last</h1>
+
+    <p>
+      Professional steel fabrication and custom metalwork solutions
+      for residential, commercial and industrial projects.
+    </p>
+
+    <a href="#quote" class="btn">GET A QUOTE</a>
+    <a href="#services" class="btn btn-outline">OUR SERVICES</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>About <span>Us</span></h2>
+      <p>Strong workmanship. Reliable service. Quality results.</p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-image">
+        <img
+          src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=1000&q=80"
+          alt="Steel fabrication workshop">
+      </div>
+
+      <div class="about-text">
+        <h3>Built With Strength & Precision</h3>
+
+        <p>
+          TAMAQMAN PTY LTD is a South African steel fabrication and
+          metalwork company providing reliable, high-quality solutions
+          for residential, commercial and industrial customers.
+        </p>
+
+        <p>
+          We focus on quality workmanship, durable materials,
+          attention to detail and customer satisfaction.
+        </p>
+
+        <a href="#quote" class="btn">REQUEST A QUOTE</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our <span>Services</span></h2>
+      <p>Custom steel solutions for your project.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <h3>Steel Gates</h3>
+        <p>Custom-designed steel gates built for security, durability and style.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Security Gates</h3>
+        <p>Strong security gates designed to protect homes and businesses.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Steel Doors</h3>
+        <p>Durable steel doors manufactured to suit your requirements.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Burglar Bars</h3>
+        <p>Reliable custom burglar bars for improved property security.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Carports</h3>
+        <p>Strong steel carports designed for homes and commercial properties.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Balustrades & Staircases</h3>
+        <p>Professional steel staircases and balustrades made to measure.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Structural Steel</h3>
+        <p>Steel structures and fabrication solutions for construction projects.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Custom Fabrication</h3>
+        <p>Specialised metalwork designed and fabricated according to your needs.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>General Metalwork</h3>
+        <p>Custom steel and metalwork solutions for residential and commercial projects.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why-us">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Why Choose <span>Us?</span></h2>
+      <p>Professional service from start to finish.</p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <h3>Quality Workmanship</h3>
+        <p>We take pride in delivering neat, strong and professional work.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Durable Materials</h3>
+        <p>We focus on solutions designed to withstand everyday use.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Custom Designs</h3>
+        <p>Every project can be designed around your property's requirements.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Professional Service</h3>
+        <p>Clear communication and a professional approach throughout your project.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Reliable Turnaround</h3>
+        <p>We work efficiently to complete projects within agreed timelines.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Competitive Pricing</h3>
+        <p>Quality fabrication solutions at competitive prices.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our <span>Projects</span></h2>
+      <p>Some examples of the type of work we provide.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80" alt="Steel fabrication project">
+        <h3>Custom Steel Fabrication</h3>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Construction project">
+        <h3>Structural Steel</h3>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Building project">
+        <h3>Commercial Projects</h3>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Request a <span>Quote</span></h2>
+      <p>Tell us about your project and we'll get back to you.</p>
+    </div>
+
+    <form action="#" method="post">
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Your email">
+      </div>
+
+      <div class="form-group">
+        <label for="project">Project Type</label>
+
+        <select id="project" name="project">
+          <option value="">Select a service</option>
+          <option>Steel Gate</option>
+          <option>Security Gate</option>
+          <option>Steel Door</option>
+          <option>Burglar Bars</option>
+          <option>Carport</option>
+          <option>Balustrade</option>
+          <option>Staircase</option>
+          <option>Structural Steel</option>
+          <option>Custom Fabrication</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Tell Us About Your Project</label>
+        <textarea id="message" name="message" placeholder="Describe what you need..."></textarea>
+      </div>
+
+      <button type="submit" class="btn">SEND QUOTE REQUEST</button>
+
+    </form>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Contact <span>Us</span></h2>
+      <p>Let's discuss your next steel fabrication project.</p>
+    </div>
+
+    <div class="contact-info">
+
+      <div class="contact-box">
+        <h3>Phone</h3>
+		<p>
+		<a href="tel:+27836182880">+27 83 618 2880</a>
+		</p>
+      </div>
+
+      <div class="contact-box">
+        <h3>Email</h3>
+        <p>
+		<a href="mailto:info@tamaqmanptyltd.co.za">info@tamaqmanptyltd.co.za </a>
+		</p>
+      </div>
+
+      <div class="contact-box">
+  <h3>Location</h3>
+  <p>
+    <a href="https://www.google.com/maps/search/?api=1&query=1+Jacobs+Office+3754,+Krugersdorp,+Gauteng,+South+Africa"
+       target="_blank">
+      1 Jacobs Office 3754, Krugersdorp, GP, South Africa
+    </a>
+  </p>
+</div>4
+
+    </div>
+
+    <br>
+
+    <a href="#quote" class="btn">GET YOUR FREE QUOTE</a>
+
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2026 <strong>TAMAQMAN PTY LTD</strong>.
+    All Rights Reserved.
+  </p>
+</footer>
+
+</body>
+</html>
